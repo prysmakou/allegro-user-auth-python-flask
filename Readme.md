@@ -25,6 +25,15 @@ cp .env-example .env
 # Edit the file using your editor (I'm a VIMer)
 vim .env
 ```
+Important: import the environment variables:
+```bash
+source .env
+```
+Check if environment set ge by:
+```bash
+echo $ALLEGRO_CLIENT_APP_ID 
+```
+You should see the value of the variable (eg client id). Do not continue if the command returned empty line. It means you did something wrong! 
 
 Start flack development server
 ```
@@ -32,8 +41,8 @@ flask run --host=0.0.0.0 --port=8000
 ```
 
 Now go to your browser and enter server's url (eg "http://localhost:8000"). Then follow the link on the page.
-You will be redirected to allegro for authentication and autherisation of the app to access you account.
-If you authorise the app you vill be redirected back to this server. Server returns JSON object with the 'token'.
+You will be redirected to Allegro for authentication and autherisation of your client app to access your account.
+After you authorise your app you you will be redirected back to this app. In case of success you will see JSON object with the 'token'.
 You can use this token like this:
 ```bash
 curl -sX GET "https://api.allegro.pl.allegrosandbox.pl/sale/offers" -H "authorization: Bearer <the token goes here>" -H 'accept: application/vnd.allegro.public.v1+json' 
