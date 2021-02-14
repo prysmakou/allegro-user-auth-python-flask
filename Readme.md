@@ -25,19 +25,10 @@ cp .env-example .env
 # Edit the file using your editor (I'm a VIMer)
 vim .env
 ```
-Important: import the environment variables:
-```bash
-source .env
-```
-Check if environment set ge by:
-```bash
-echo $ALLEGRO_CLIENT_APP_ID 
-```
-You should see the value of the variable (eg client id). Do not continue if the command returned empty line. It means you did something wrong! 
 
-Start flack development server
+Start flack development server by eg:
 ```
-flask run --host=0.0.0.0 --port=8000
+FLASK_APP=auth_serv.py FLASK_ENV=development flask run --host=0.0.0.0 --port=8000
 ```
 
 Now go to your browser and enter server's url (eg "http://localhost:8000"). Then follow the link on the page.
