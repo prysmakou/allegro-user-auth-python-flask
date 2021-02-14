@@ -2,6 +2,9 @@ import base64
 import os
 import requests
 from flask import Flask, request
+from dotenv import load_dotenv
+
+load_dotenv(verbose=True)
 
 app = Flask(__name__)
 
