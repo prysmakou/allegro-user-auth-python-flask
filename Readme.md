@@ -1,12 +1,15 @@
 # Allegro.pl user authenticator
 
+[Also see in Polish](Readme.PL.md)
+
 ## Purpose
 
 Many Allegro API endpoints require bearer-token-for-user.
 You can use this code to get the token for development purposes.
-The application is a web server that has two routes:
+The application is a web server that has three routes:
 * / - contains link to Allegro (sandbox)
 * /auth - performs user authentication. Expects code (provided by Allegro) as http parameter.
+* /refresh - refresh the token (after initial token obtained)
 
 ## How to run
 
